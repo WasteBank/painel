@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Painel PMO</title></head>
+<body style="font-family:sans-serif;color:#666;padding:20px">Carregando o Painel PMO…
+<script>
+fetch('https://wastebank.app.n8n.cloud/webhook/painel-pmo' + location.search)
+  .then(r => r.text())
+  .then(h => { document.open(); document.write(h); document.close(); })
+  .catch(() => { document.body.textContent = 'Não foi possível carregar o painel. Tente de novo em 1 minuto.'; });
+</script>
+</body></html>
