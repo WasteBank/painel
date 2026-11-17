@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Trilha de Treinamentos · WB</title>
+<style>
+:root{--verde:#1f6b4a;--verde2:#2e8b5e;--claro:#eaf5ef;--txt:#1d2a24;--cinza:#5d6b64;--borda:#dfe7e2}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#f5f8f6;color:var(--txt);line-height:1.45}
+header{background:var(--verde);color:#fff;padding:22px 16px 26px}
+header .w{max-width:720px;margin:0 auto}
+header h1{margin:0 0 6px;font-size:22px}
+header p{margin:0;font-size:15px;opacity:.92}
+main{max-width:720px;margin:-12px auto 40px;padding:0 16px}
+.como{background:#fff;border:1px solid var(--borda);border-radius:14px;padding:14px 16px;margin-bottom:16px}
+.como h2{font-size:16px;margin:0 0 8px}
+.como ol{margin:0;padding-left:20px;font-size:15px}
+.como li{margin:4px 0}
+.card{background:#fff;border:1px solid var(--borda);border-radius:14px;padding:16px;margin-bottom:12px}
+.card .n{display:inline-block;background:var(--claro);color:var(--verde);font-weight:700;font-size:13px;border-radius:20px;padding:2px 10px;margin-bottom:6px}
+.card h3{margin:2px 0 4px;font-size:18px}
+.card p{margin:0 0 12px;color:var(--cinza);font-size:14.5px}
+.bt{display:flex;gap:8px;flex-wrap:wrap}
+.bt a{flex:1 1 200px;text-align:center;text-decoration:none;font-weight:600;font-size:15px;border-radius:10px;padding:12px 10px}
+.ler{background:var(--claro);color:var(--verde);border:1px solid #cfe5d8}
+.reg{background:var(--verde2);color:#fff}
+.ajuda{font-size:14px;color:var(--cinza);text-align:center;margin-top:20px}
+</style>
+</head>
+<body>
+<header><div class="w">
+  <h1>Trilha de Treinamentos</h1>
+  <p>WB Integra · Atendentes dos Ecopontos</p>
+</div></header>
+<main>
+  <section class="como">
+    <h2>Como fazer cada treinamento</h2>
+    <ol>
+      <li>Toque em <b>1. Ler o material</b> e leia com atenção até o final.</li>
+      <li>Toque em <b>2. Registrar conclusão</b>, escolha seu nome e o treinamento, e dê suas notas.</li>
+      <li>Em alguns minutos chega no seu WhatsApp o <b>Termo de Conclusão</b>. Abra o link e assine.</li>
+    </ol>
+  </section>
+  <div id="lista"></div>
+  <p class="ajuda">Dúvidas? Fale com a Rosangela (RH).</p>
+</main>
+<script>
+var FORM = 'https://forms.clickup.com/1600340000002621/f/1dfg0rkgmhx-2397/CYPM9OI4NSSD9X8U7N';
+var T = [
+  ['Comunicar Ocorrências', 'O que fazer quando acontece um acidente, incidente, dano ou conflito: quem avisar, em que ordem e onde registrar.', '07_Comunicar_Ocorrencias_WB.pdf'],
+  ['Registro de Ponto (Pontomais/VR)', 'Como registrar entrada, intervalo e saída, inclusive sem internet, e como justificar.', '05_Manual_Registro_de_Ponto.pdf'],
+  ['Trabalho Seguro — Guia de Boas Práticas', 'Prevenção no dia a dia: postura, manuseio de materiais, objetos cortantes, sol e calor, trânsito, higiene e EPI.', '01_Trabalho_Seguro_WB.pdf'],
+  ['Segurança da informação', 'Cuidados com senhas, celular, aplicativos e dados no trabalho.', '04_Seguranca_da_Informacao.pdf'],
+  ['LGPD na prática', 'Como tratar os dados pessoais dos usuários do Ecoponto com cuidado e dentro da lei.', '03_LGPD_na_Pratica.pdf'],
+  ['Código de Conduta e Ética', 'Como agimos na WB: respeito, honestidade e o que fazer diante de uma situação errada.', '06_Codigo_de_Conduta_WB.pdf']
+];
+document.getElementById('lista').innerHTML = T.map(function (t, i) {
+  return '<div class="card"><span class="n">Treinamento ' + (i + 1) + ' de ' + T.length + '</span><h3>' + t[0] + '</h3><p>' + t[1] + '</p>' +
+    '<div class="bt"><a class="ler" href="' + encodeURI(t[2]) + '" target="_blank" rel="noopener">1. Ler o material</a>' +
+    '<a class="reg" href="' + FORM + '" target="_blank" rel="noopener">2. Registrar conclusão</a></div></div>';
+}).join('');
+</script>
+</body>
+</html>
