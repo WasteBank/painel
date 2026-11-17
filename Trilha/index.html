@@ -39,7 +39,7 @@ main{max-width:720px;margin:-12px auto 40px;padding:0 16px}
     <h2>Como fazer cada treinamento</h2>
     <ol>
       <li>Toque em <b>1. Ler o material</b> e leia com atenção até o final.</li>
-      <li>Toque em <b>2. Registrar conclusão</b>, escolha seu nome e o treinamento, e dê suas notas.</li>
+      <li>Toque em <b>2. Registrar conclusão</b>. O treinamento e a data já vêm preenchidos: escolha seu nome e dê suas notas.</li>
       <li>Em alguns minutos chega no seu WhatsApp o <b>Termo de Conclusão</b>. Abra o link e assine.</li>
     </ol>
   </section>
@@ -49,17 +49,17 @@ main{max-width:720px;margin:-12px auto 40px;padding:0 16px}
 <script>
 var FORM = 'https://forms.clickup.com/1600340000002621/f/1dfg0rkgmhx-2397/CYPM9OI4NSSD9X8U7N';
 var T = [
-  ['Registro de Ponto (Pontomais/VR)', 'Como registrar entrada, intervalo e saída, inclusive sem internet, e como justificar.', '05_Manual_Registro_de_Ponto.pdf'],
-  ['Trabalho Seguro — Guia de Boas Práticas', 'Prevenção no dia a dia: postura, manuseio de materiais, objetos cortantes, sol e calor, trânsito, higiene e EPI.', '01_Trabalho_Seguro_WB.pdf'],
-  ['Comunicar Ocorrências', 'O que fazer quando acontece um acidente, incidente, dano ou conflito: quem avisar, em que ordem e onde registrar.', '07_Comunicar_Ocorrencias_WB.pdf'],
-  ['Código de Conduta e Ética', 'Como agimos na WB: respeito, honestidade e o que fazer diante de uma situação errada.', '06_Codigo_de_Conduta_WB.pdf'],
-  ['LGPD na prática', 'Como tratar os dados pessoais dos usuários do Ecoponto com cuidado e dentro da lei.', '03_LGPD_na_Pratica.pdf'],
-  ['Segurança da informação', 'Cuidados com senhas, celular, aplicativos e dados no trabalho.', '04_Seguranca_da_Informacao.pdf']
+  ['Registro de Ponto (Pontomais/VR)', 'Como registrar entrada, intervalo e saída, inclusive sem internet, e como justificar.', '05_Manual_Registro_de_Ponto.pdf', 'Registro de Ponto (Pontomais/VR)'],
+  ['Trabalho Seguro — Guia de Boas Práticas', 'Prevenção no dia a dia: postura, manuseio de materiais, objetos cortantes, sol e calor, trânsito, higiene e EPI.', '01_Trabalho_Seguro_WB.pdf', 'Trabalho Seguro — Guia de Boas Práticas'],
+  ['Comunicar Ocorrências', 'O que fazer quando acontece um acidente, incidente, dano ou conflito: quem avisar, em que ordem e onde registrar.', '07_Comunicar_Ocorrencias_WB.pdf', 'Comunicar Ocorrências'],
+  ['Código de Conduta e Ética', 'Como agimos na WB: respeito, honestidade e o que fazer diante de uma situação errada.', '06_Codigo_de_Conduta_WB.pdf', 'Código de Conduta e Ética'],
+  ['LGPD na prática', 'Como tratar os dados pessoais dos usuários do Ecoponto com cuidado e dentro da lei.', '03_LGPD_na_Pratica.pdf', 'LGPD'],
+  ['Segurança da informação', 'Cuidados com senhas, celular, aplicativos e dados no trabalho.', '04_Seguranca_da_Informacao.pdf', 'Segurança da informação']
 ];
 document.getElementById('lista').innerHTML = T.map(function (t, i) {
   return '<div class="card"><span class="n">Treinamento ' + (i + 1) + ' de ' + T.length + '</span><h3>' + t[0] + '</h3><p>' + t[1] + '</p>' +
     '<div class="bt"><a class="ler" href="' + encodeURI(t[2]) + '" target="_blank" rel="noopener">1. Ler o material</a>' +
-    '<a class="reg" href="' + FORM + '" target="_blank" rel="noopener">2. Registrar conclusão</a></div></div>';
+    '<a class="reg" href="' + FORM + '?Treinamento=' + encodeURIComponent(t[3]) + '&Data=' + Date.now() + '" target="_blank" rel="noopener">2. Registrar conclusão</a></div></div>';
 }).join('');
 </script>
 </body>
